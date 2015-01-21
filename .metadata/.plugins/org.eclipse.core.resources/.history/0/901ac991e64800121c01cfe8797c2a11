@@ -1,0 +1,174 @@
+package testscript;
+
+
+import java.text.DateFormat;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import datatable.Xls_Reader;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+		 public class Tax extends DriverScript {
+			 
+			 public static Xls_Reader e = new Xls_Reader("C:\\Users\\annavik.QUALITREEINC\\Desktop\\New folder\\worspace sample\\worspace sample\\Module21_Selenium_Testng_Hybrid\\src\\testscript\\CategoryScripts.xlsx");		  
+		
+		public static String  TaxCalculation() throws Exception{
+			System.out.println("*************************Starting Tax calculation *******************");
+			driver.findElement(By.linkText("Administration")).click();
+		 try 
+		    {	
+	Date sdate = null;
+	Date edate;
+		    Xls_Reader g = new Xls_Reader("C:\\Users\\annavik.QUALITREEINC\\Desktop\\New folder\\worspace sample\\worspace sample\\Module21_Selenium_Testng_Hybrid\\src\\testscript\\sample1.xlsx");
+		    String   e_freshsplprice=e.getCellData("Test_Data", "Parameters",4);
+		    String   e_freshsdata=e.getCellData("Test_Data", "Parameters",5);
+		    String   e_freshedata=e.getCellData("Test_Data", "Parameters",6);
+		    String   e_freshprice=e.getCellData("Test_Data", "Parameters",3);
+		    DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+		    try
+		    {
+		    sdate = (Date)formatter.parse(e_freshsdata.trim());
+		    }
+		    catch (Exception e)
+		    {
+		    	System.out.println(e.getMessage());
+		    }
+		   edate = (Date)formatter.parse(e_freshedata.trim());
+		    DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+		    Date date = new Date();
+			
+		    String   price=e_freshprice;
+		    if(sdate.before(date) && edate.after(date)){
+			price = e_freshsplprice;
+			}
+		    System.out.println(price);
+		     String   percentage=g.getCellData("Sheet1", "TaxVal",3);
+		    System.out.println(percentage);
+		    String   quantity =g.getCellData("Sheet1", "TaxVal",4);
+			System.out.println(quantity);	
+			double quntitys = Double.valueOf(quantity).doubleValue();
+		//	int quntitys=Integer.parseInt( quantity );
+			String percentage1 = percentage ; 
+			double y = Double.valueOf(percentage1).doubleValue();
+			double x = Double.valueOf(price).doubleValue();		
+			double  result = x * y / 100+ x + 4;	
+			String results = String.format("%.2f", result);
+			double finalx = Double.valueOf(results).doubleValue();
+			double x1 = Double.valueOf(results).doubleValue();
+			DecimalFormat df = new DecimalFormat("#,###,##0.0");
+			df = new DecimalFormat("#,###,##0.0");
+			System.out.println(df.format(x1));
+				 
+				
+		 //   WebDriver driver = new FirefoxDriver();
+		 //   driver.get("http://192.168.101.98:83/");
+		 //  driver.manage().window().maximize();
+     	//	driver.findElement(By.linkText("Log in")).click();
+		//	driver.findElement(By.id("Email")).clear();
+		//   	driver.findElement(By.id("Email")).sendKeys("admin@qualitreeinc.com");
+		//	driver.findElement(By.id("Password")).clear();
+		//	driver.findElement(By.id("Password")).sendKeys("admin123");
+		//	driver.findElement(By.cssSelector("input.button-1.login-button")).click();
+			System.out.println("*************************Starting Tax calculation2 *******************");
+			driver.findElement(By.linkText("Public store")).click();
+			driver.findElement(By.linkText("Administration")).click();
+			driver.findElement(By.xpath("//ul[@id='Admin']/li[7]/span/span")).click();
+			Thread.sleep(4000);
+		    driver.findElement(By.xpath("//*[@id='Admin']/li[7]/div/ul/li[8]/span")).click();
+		    Thread.sleep(3000);
+		    System.out.println("*************************Starting Tax calculation2===== *******************");
+		    driver.findElement(By.xpath("//*[@id='Admin']/li[7]/div/ul/li[8]/div/ul/li[1]/a")).click();
+		    Thread.sleep(3000);
+			driver.findElement(By.linkText("Configure")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("(//a[contains(text(),'Edit')])[11]")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.cssSelector("div.t-formatted-value")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.id("Rate")).clear();
+			Thread.sleep(3000);
+			driver.findElement(By.id("Rate")).sendKeys(percentage1);
+			 System.out.println("*************************Starting Tax calculation2============== *******************");
+			Thread.sleep(3000);
+			driver.findElement(By.linkText("Update")).click();
+			Thread.sleep(3000);
+		    driver.findElement(By.xpath("//*[@id='Admin']/li[2]/span")).click();
+		    Thread.sleep(3000);
+		    driver.findElement(By.xpath("//*[@id='Admin']/li[2]/div/ul/li[3]/span")).click();
+		    System.out.println("*************************Starting Tax calculation3============== *******************");
+		    Thread.sleep(3000);
+			driver.findElement(By.xpath("//*[@id='Admin']/li[2]/div/ul/li[3]/div/ul/li[1]/a")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.id("SearchProductName")).clear();
+			driver.findElement(By.id("SearchProductName")).sendKeys("HTC");
+			driver.findElement(By.id("search-products")).click();
+			System.out.println("HTC search produt cliked");
+			driver.findElement(By.linkText("Edit")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.linkText("Product variants")).click();
+			Thread.sleep(3000);
+			System.out.println("*************************Starting Tax calculation4============== *******************");
+			driver.findElement(By.linkText("Edit")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.id("Price")).clear();
+			Thread.sleep(3000);
+			driver.findElement(By.id("Price")).sendKeys(price);
+			Thread.sleep(3000);
+			System.out.println("*************************Starting Tax calculation5============== *******************");
+			new Select(driver.findElement(By.id("TaxCategoryId"))).selectByVisibleText("shiva");
+			Thread.sleep(3000);
+			driver.findElement(By.name("save")).click();
+			driver.findElement(By.linkText("Public store")).click();
+			driver.findElement(By.id("small-searchterms")).clear();
+			Thread.sleep(3000);
+			driver.findElement(By.id("small-searchterms")).sendKeys("HTC");
+			Thread.sleep(3000);
+			driver.findElement(By.cssSelector("input.button-1.search-box-button")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.cssSelector("input.button-2.product-box-add-to-cart-button")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.linkText("Shopping cart")).click();
+			Thread.sleep(2000);
+	        driver.findElement(By.xpath("//td[5]/input")).clear();
+			 driver.findElement(By.xpath("//td[5]/input")).sendKeys(quantity);
+//			driver.findElement(By.name("itemquantity934")).clear();
+//			driver.findElement(By.name("itemquantity934")).sendKeys(quantity);
+			driver.findElement(By.name("updatecart")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("html/body/div[4]/div[1]/div[4]/div[2]/div[3]/div/form/div[4]/div[1]/input[1]")).click();
+			String campare =  driver.findElement(By.xpath("//strong")).getText().toString().trim();
+			String tobetested = campare ;
+			String resultss = String.format("%.2f", result*quntitys);
+		//	int f= 0;
+			//if(quntitys != 1.0)
+			//{
+	//	f= (int) ((quntitys-1) *4);
+		//	}
+			
+			double x1s = Double.valueOf(resultss).doubleValue()-(quntitys-1) *4;
+		    DecimalFormat dfs = new DecimalFormat("#,###,##0.00");
+		    dfs = new DecimalFormat("#,###,##0.00");
+		    System.out.println("*************************Starting Tax calculation3 *******************");
+			System.out.println(campare);
+			tobetested.trim();
+			System.out.println("*************************Starting Tax calculation4 *******************");
+			String with = "$"+dfs.format(x1s).toString()+ " " +"(USD)".trim();
+			if(tobetested.equals(with))
+			{
+				System.out.println("equals");
+			}
+			else
+			{
+				System.out.println("not equals"); 
+			}
+		    }  
+			catch (InterruptedException e) {	
+			e.printStackTrace();
+			}
+		 return "Pass";
+	        }
+		    }

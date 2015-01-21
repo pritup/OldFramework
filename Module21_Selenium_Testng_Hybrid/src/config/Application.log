@@ -1,0 +1,219 @@
+15/03/2013 16:41:44 devpinoyLogger Executing the test TP01
+15/03/2013 16:41:44 devpinoyLogger navigate
+15/03/2013 16:41:44 devpinoyLogger Executing Navigate
+15/03/2013 16:42:01 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:01 devpinoyLogger ClearEditField
+15/03/2013 16:42:01 devpinoyLogger Executing ClearEditField Keyword
+15/03/2013 16:42:01 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:01 devpinoyLogger input
+15/03/2013 16:42:01 devpinoyLogger Executing input Keyword
+15/03/2013 16:42:01 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:01 devpinoyLogger ClearEditField
+15/03/2013 16:42:01 devpinoyLogger Executing ClearEditField Keyword
+15/03/2013 16:42:01 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:01 devpinoyLogger input
+15/03/2013 16:42:01 devpinoyLogger Executing input Keyword
+15/03/2013 16:42:01 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:01 devpinoyLogger clickLink
+15/03/2013 16:42:01 devpinoyLogger Executing clickLink
+15/03/2013 16:42:07 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:07 devpinoyLogger verifyText
+15/03/2013 16:42:07 devpinoyLogger Executing verifyText
+15/03/2013 16:42:07 devpinoyLogger Logout
+15/03/2013 16:42:07 devpinoyLogger Logout
+15/03/2013 16:42:07 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:07 devpinoyLogger ***********************************TP01 --- Pass
+15/03/2013 16:42:07 devpinoyLogger Executing the test TP01
+15/03/2013 16:42:07 devpinoyLogger clickLink
+15/03/2013 16:42:07 devpinoyLogger Executing clickLink
+15/03/2013 16:42:13 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:13 devpinoyLogger Wait
+15/03/2013 16:42:13 devpinoyLogger Executing WaitTime
+15/03/2013 16:42:21 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:21 devpinoyLogger switchframe
+15/03/2013 16:42:21 devpinoyLogger Executing switchframe
+15/03/2013 16:42:21 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:21 devpinoyLogger clickButton
+15/03/2013 16:42:21 devpinoyLogger Executing clickButton Keyword
+15/03/2013 16:42:21 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:21 devpinoyLogger Wait
+15/03/2013 16:42:21 devpinoyLogger Executing WaitTime
+15/03/2013 16:42:29 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:29 devpinoyLogger input
+15/03/2013 16:42:29 devpinoyLogger Executing input Keyword
+15/03/2013 16:42:29 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:29 devpinoyLogger input
+15/03/2013 16:42:29 devpinoyLogger Executing input Keyword
+15/03/2013 16:42:30 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:30 devpinoyLogger clickButton
+15/03/2013 16:42:30 devpinoyLogger Executing clickButton Keyword
+15/03/2013 16:42:30 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:30 devpinoyLogger Wait
+15/03/2013 16:42:30 devpinoyLogger Executing WaitTime
+15/03/2013 16:42:38 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:38 devpinoyLogger verifyText
+15/03/2013 16:42:38 devpinoyLogger Executing verifyText
+15/03/2013 16:42:38 devpinoyLogger Robert Dicosta
+15/03/2013 16:42:38 devpinoyLogger Robert Dicosta
+15/03/2013 16:42:38 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:38 devpinoyLogger 
+15/03/2013 16:42:38 devpinoyLogger Error came
+15/03/2013 16:42:38 devpinoyLogger 
+15/03/2013 16:42:38 devpinoyLogger Error came
+15/03/2013 16:42:38 devpinoyLogger 
+15/03/2013 16:42:38 devpinoyLogger Error came
+15/03/2013 16:42:38 devpinoyLogger 
+15/03/2013 16:42:38 devpinoyLogger Error came
+15/03/2013 16:42:38 devpinoyLogger 
+15/03/2013 16:42:38 devpinoyLogger Error came
+15/03/2013 16:42:38 devpinoyLogger 
+15/03/2013 16:42:38 devpinoyLogger Error came
+15/03/2013 16:42:38 devpinoyLogger ***********************************TP01 --- Pass
+15/03/2013 16:42:38 devpinoyLogger Executing the test TP01
+15/03/2013 16:42:38 devpinoyLogger switchframe1
+15/03/2013 16:42:38 devpinoyLogger Executing switchframe1
+15/03/2013 16:42:38 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:38 devpinoyLogger clickLink
+15/03/2013 16:42:38 devpinoyLogger Executing clickLink
+15/03/2013 16:42:43 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:43 devpinoyLogger Wait
+15/03/2013 16:42:43 devpinoyLogger Executing WaitTime
+15/03/2013 16:42:51 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:51 devpinoyLogger switchframe
+15/03/2013 16:42:51 devpinoyLogger Executing switchframe
+15/03/2013 16:42:51 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:51 devpinoyLogger clickButton
+15/03/2013 16:42:51 devpinoyLogger Executing clickButton Keyword
+15/03/2013 16:42:51 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:51 devpinoyLogger Wait
+15/03/2013 16:42:51 devpinoyLogger Executing WaitTime
+15/03/2013 16:42:59 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:59 devpinoyLogger input
+15/03/2013 16:42:59 devpinoyLogger Executing input Keyword
+15/03/2013 16:42:59 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:42:59 devpinoyLogger clickButton
+15/03/2013 16:42:59 devpinoyLogger Executing clickButton Keyword
+15/03/2013 16:43:00 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:00 devpinoyLogger Wait
+15/03/2013 16:43:00 devpinoyLogger Executing WaitTime
+15/03/2013 16:43:08 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:08 devpinoyLogger verifyText
+15/03/2013 16:43:08 devpinoyLogger Executing verifyText
+15/03/2013 16:43:08 devpinoyLogger Robert
+15/03/2013 16:43:08 devpinoyLogger Robert
+15/03/2013 16:43:08 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:08 devpinoyLogger ***********************************TP01 --- Pass
+15/03/2013 16:43:08 devpinoyLogger Executing the test TP01
+15/03/2013 16:43:08 devpinoyLogger clickLink
+15/03/2013 16:43:08 devpinoyLogger Executing clickLink
+15/03/2013 16:43:08 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:08 devpinoyLogger Wait
+15/03/2013 16:43:08 devpinoyLogger Executing WaitTime
+15/03/2013 16:43:16 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:16 devpinoyLogger clickButton
+15/03/2013 16:43:16 devpinoyLogger Executing clickButton Keyword
+15/03/2013 16:43:16 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:16 devpinoyLogger Wait
+15/03/2013 16:43:16 devpinoyLogger Executing WaitTime
+15/03/2013 16:43:24 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:24 devpinoyLogger clickLink
+15/03/2013 16:43:24 devpinoyLogger Executing clickLink
+15/03/2013 16:43:24 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:24 devpinoyLogger clickButton
+15/03/2013 16:43:24 devpinoyLogger Executing clickButton Keyword
+15/03/2013 16:43:24 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:24 devpinoyLogger Wait
+15/03/2013 16:43:24 devpinoyLogger Executing WaitTime
+15/03/2013 16:43:32 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:32 devpinoyLogger verifyText
+15/03/2013 16:43:32 devpinoyLogger Executing verifyText
+15/03/2013 16:43:32 devpinoyLogger Successfully Saved
+15/03/2013 16:43:32 devpinoyLogger Successfully Saved
+15/03/2013 16:43:32 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:32 devpinoyLogger ***********************************TP01 --- Pass
+15/03/2013 16:43:32 devpinoyLogger Executing the test TP01
+15/03/2013 16:43:32 devpinoyLogger clickLink
+15/03/2013 16:43:32 devpinoyLogger Executing clickLink
+15/03/2013 16:43:32 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:32 devpinoyLogger Wait
+15/03/2013 16:43:32 devpinoyLogger Executing WaitTime
+15/03/2013 16:43:40 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:40 devpinoyLogger clickButton
+15/03/2013 16:43:40 devpinoyLogger Executing clickButton Keyword
+15/03/2013 16:43:40 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:40 devpinoyLogger Wait
+15/03/2013 16:43:40 devpinoyLogger Executing WaitTime
+15/03/2013 16:43:48 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:48 devpinoyLogger selectdropdown
+15/03/2013 16:43:48 devpinoyLogger Executing selectdropdown
+15/03/2013 16:43:48 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:48 devpinoyLogger selectdropdown
+15/03/2013 16:43:48 devpinoyLogger Executing selectdropdown
+15/03/2013 16:43:49 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:49 devpinoyLogger selectdropdown
+15/03/2013 16:43:49 devpinoyLogger Executing selectdropdown
+15/03/2013 16:43:49 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:49 devpinoyLogger clickButton
+15/03/2013 16:43:49 devpinoyLogger Executing clickButton Keyword
+15/03/2013 16:43:49 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:49 devpinoyLogger Wait
+15/03/2013 16:43:49 devpinoyLogger Executing WaitTime
+15/03/2013 16:43:57 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:57 devpinoyLogger verifyText
+15/03/2013 16:43:57 devpinoyLogger Executing verifyText
+15/03/2013 16:43:57 devpinoyLogger Successfully Updated
+15/03/2013 16:43:57 devpinoyLogger Successfully Updated
+15/03/2013 16:43:57 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:57 devpinoyLogger ***********************************TP01 --- Pass
+15/03/2013 16:43:57 devpinoyLogger Executing the test TP01
+15/03/2013 16:43:57 devpinoyLogger switchframe1
+15/03/2013 16:43:57 devpinoyLogger Executing switchframe1
+15/03/2013 16:43:57 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:57 devpinoyLogger clickLink
+15/03/2013 16:43:57 devpinoyLogger Executing clickLink
+15/03/2013 16:43:59 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:43:59 devpinoyLogger Wait
+15/03/2013 16:43:59 devpinoyLogger Executing WaitTime
+15/03/2013 16:44:07 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:44:07 devpinoyLogger switchframe
+15/03/2013 16:44:07 devpinoyLogger Executing switchframe
+15/03/2013 16:44:08 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:44:08 devpinoyLogger clickButton
+15/03/2013 16:44:08 devpinoyLogger Executing clickButton Keyword
+15/03/2013 16:44:08 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:44:08 devpinoyLogger Wait
+15/03/2013 16:44:08 devpinoyLogger Executing WaitTime
+15/03/2013 16:44:16 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:44:16 devpinoyLogger input
+15/03/2013 16:44:16 devpinoyLogger Executing input Keyword
+15/03/2013 16:44:16 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:44:16 devpinoyLogger clickButton
+15/03/2013 16:44:16 devpinoyLogger Executing clickButton Keyword
+15/03/2013 16:44:16 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:44:16 devpinoyLogger Wait
+15/03/2013 16:44:16 devpinoyLogger Executing WaitTime
+15/03/2013 16:44:24 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:44:24 devpinoyLogger verifyText
+15/03/2013 16:44:24 devpinoyLogger Executing verifyText
+15/03/2013 16:44:24 devpinoyLogger Call Center Agent
+15/03/2013 16:44:24 devpinoyLogger Call Center Agent
+15/03/2013 16:44:24 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:44:24 devpinoyLogger verifyText
+15/03/2013 16:44:24 devpinoyLogger Executing verifyText
+15/03/2013 16:44:24 devpinoyLogger Probation
+15/03/2013 16:44:24 devpinoyLogger Probation
+15/03/2013 16:44:24 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:44:24 devpinoyLogger verifyText
+15/03/2013 16:44:24 devpinoyLogger Executing verifyText
+15/03/2013 16:44:24 devpinoyLogger HR Department
+15/03/2013 16:44:24 devpinoyLogger HR Department
+15/03/2013 16:44:24 devpinoyLogger ***Result of execution -- Pass
+15/03/2013 16:44:24 devpinoyLogger ***********************************TP01 --- Pass
+15/03/2013 16:44:24 devpinoyLogger Executing the test TP01
+15/03/2013 16:44:24 devpinoyLogger zipandmail
+15/03/2013 16:44:30 devpinoyLogger Error came
+15/03/2013 16:44:30 devpinoyLogger teardown
+15/03/2013 16:44:30 devpinoyLogger Error came
+15/03/2013 16:44:30 devpinoyLogger ***********************************TP01 --- Pass
+15/03/2013 16:44:30 devpinoyLogger Skipping the test TP02
+15/03/2013 16:44:30 devpinoyLogger ***********************************TP02 --- Skip

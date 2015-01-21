@@ -1,0 +1,489 @@
+package testscript;
+
+import static org.junit.Assert.assertEquals;
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+import datatable.Xls_Reader;
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class CustomReader_General_ALL extends DriverScript
+{
+	//private static WebDriver driver;
+//	private  String baseUrl;
+//	private StringBuffer verificationErrors = new StringBuffer();
+	public static String CustomSettings() throws Exception
+	{
+		
+		System.out.println("custom setting started");
+
+		Xls_Reader d=new Xls_Reader("D:\\new frm\\Frame_work_latest\\Module21_Selenium_Testng_Hybrid\\src\\testscript\\Custom.xlsx");
+        //driver.get(baseUrl + "");
+//		System.out.println("i executed xls reader");
+//		System.out.println(driver.getTitle());
+//		driver.findElement(By.linkText("Log in")).click();
+//	
+//		System.out.println("clicked login");
+//		driver.findElement(By.id("Email")).clear();
+//		driver.findElement(By.id("Email")).sendKeys("admin@qualitreeinc.com");
+//		driver.findElement(By.id("Password")).clear();
+//		driver.findElement(By.id("Password")).sendKeys("admin123");
+//		driver.findElement(By.cssSelector("input.button-1.login-button")).click();
+//		driver.findElement(By.linkText("Administration")).click();
+		///////DropDown/////////////////
+		driver.findElement(By.xpath("//ul[@id='Admin']/li[7]/span/span")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//ul[@id='Admin']/li[7]/div/ul/li/span/span")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a[contains(@href, '/Admin/Setting/GeneralCommon')]")).click();
+		Thread.sleep(2000);
+		///////////////////////////Tab 1/////////////////////////////////////////////
+		/////////////////////Store Name////////////////////////////
+		String Name=d.getCellData("Custom", "Required_Setting/Value",2);
+		String NameXPath=d.getCellData("Custom", "ClickLink",2);
+		if(d.getCellData("Custom", "Setting_Indicator", 2).equals("N"))
+		{
+			driver.findElement(By.xpath(NameXPath)).clear();
+			driver.findElement(By.xpath(NameXPath)).sendKeys(Name);
+			System.out.println("The Custom stored Name is:"+Name+"as the Indicator indicates to N");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 2).equals("Y"))
+		{
+			driver.findElement(By.xpath(NameXPath)).clear();
+			driver.findElement(By.xpath(NameXPath)).sendKeys(Name);
+			System.out.println("The Custom stored Name is:"+Name+"as the Indicator indicates to Y");
+		}
+        //////////////////////URL////////////////////////////////////
+		String StoreURL=d.getCellData("Custom", "Required_Setting/Value",3);
+		String URLXPath=d.getCellData("Custom", "ClickLink",3);
+		if(d.getCellData("Custom", "Setting_Indicator", 3).equals("N"))
+		{
+			
+			driver.findElement(By.xpath(URLXPath)).clear();
+			driver.findElement(By.xpath(URLXPath)).sendKeys(StoreURL);
+			System.out.println("The Custom stored Url is:"+StoreURL+"as the Indicator indicates to N");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 3).equals("Y"))
+		{
+			
+			driver.findElement(By.xpath(URLXPath)).clear();
+			driver.findElement(By.xpath(URLXPath)).sendKeys(StoreURL);
+			System.out.println("The Custom stored Url is:"+StoreURL+"as the Indicator indicates to Y");
+		}
+       ///////////////////Store Closed Check Box////////////////////////////
+		String CheckBoxStatus=d.getCellData("Custom", "Required_Setting/Value",4);
+		String StoreClosedXPath=d.getCellData("Custom", "ClickLink",4);
+		if(d.getCellData("Custom", "Setting_Indicator", 4).equals("Y"))
+		{
+			
+			driver.findElement(By.xpath(StoreClosedXPath)).click();
+			System.out.println("Store Closed status is"+CheckBoxStatus+"as the Indicator indicates to Y");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 4).equals("Y"))
+		{
+			
+			driver.findElement(By.xpath(StoreClosedXPath)).click();
+			System.out.println("Store Closed status is"+CheckBoxStatus+"as the Indicator indicates to Y");
+		}
+        //////////////////DesktopStoreThemeList//////////////////////////////////
+		String ThemeColor=d.getCellData("Custom", "Required_Setting/Value",5);
+		String ThemeColorXPath=d.getCellData("Custom", "ClickLink",5);
+		if(d.getCellData("Custom", "Setting_Indicator", 5).equals("N"))
+		{
+			
+			assertEquals(ThemeColor, driver.findElement(By.xpath(ThemeColorXPath)).getText());
+			System.out.println("Desktop Store Theme is:"+ThemeColor+"as the Indicator indicates to Y");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 5).equals("N"))
+		{
+			
+			assertEquals(ThemeColor, driver.findElement(By.xpath(ThemeColorXPath)).getText());
+			System.out.println("Desktop Store Theme is:"+ThemeColor+"as the Indicator indicates to Y");
+		}
+        /////////////////////////AllowCustomerstoSelectaTheme//////////////
+		String CustomerCBStatus=d.getCellData("Custom", "Required_Setting/Value",6);
+		String CustomerCBStatusid=d.getCellData("Custom", "ClickLink",6);
+		if(d.getCellData("Custom", "Setting_Indicator", 6).equals("Y"))
+		{
+			driver.findElement(By.xpath(CustomerCBStatusid)).click();
+			System.out.println("Allow Customers to Selected Theme status is:"+CustomerCBStatus+"as the Indicator indicates to Y");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 6).equals("Y"))
+		{
+			driver.findElement(By.xpath(CustomerCBStatusid)).click();
+			driver.findElement(By.xpath(CustomerCBStatusid)).click();
+			System.out.println("Allow Customers to Selected Theme status is:"+CustomerCBStatus+"as the Indicator indicates to N");
+		}
+        //////////////////////////////Mobiledevicessupported//////////
+		String MobileCBStatus=d.getCellData("Custom", "Required_Setting/Value",7);
+		String MobileCBStatusid=d.getCellData("Custom", "ClickLink",7);
+		if(d.getCellData("Custom", "Setting_Indicator", 7).equals("Y"))
+		{
+			driver.findElement(By.xpath(MobileCBStatusid)).click();
+			driver.findElement(By.xpath(MobileCBStatusid)).click();
+			System.out.println("Mobile Device Supported status is:"+MobileCBStatus+CustomerCBStatus+"as the Indicator indicates to Y");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 7).equals("N"))
+		{
+			driver.findElement(By.xpath(MobileCBStatusid)).click();
+			driver.findElement(By.xpath(MobileCBStatusid)).click();
+			System.out.println("Mobile Device Supported status is:"+MobileCBStatus+CustomerCBStatus+"as the Indicator indicates to N");
+		}
+        ////////////////////////MobileStoreThemeList//////////////////////////
+		String MobileTheme=d.getCellData("Custom", "Required_Setting/Value",8);
+		String MobileThemeListXPath=d.getCellData("Custom", "ClickLink",8);
+		if(d.getCellData("Custom", "Setting_Indicator", 8).equals("Y"))
+		{
+			assertEquals(MobileTheme, driver.findElement(By.xpath(MobileThemeListXPath)).getText());
+			System.out.println("Mobile Theme:"+MobileTheme+"as the Indicator indicates to Y");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 8).equals("Y"))
+		{
+			assertEquals(MobileTheme, driver.findElement(By.xpath(MobileThemeListXPath)).getText());
+			System.out.println("Mobile Theme:"+MobileTheme+"as the Indicator indicates to Y");
+		}
+        /////////////////////Display EU cookie law warning//////////////////////////
+		String CookieWarningStatus=d.getCellData("Custom", "Required_Setting/Value",9);
+		String CookieWarningStatusXPath=d.getCellData("Custom", "ClickLink",9);
+		if(d.getCellData("Custom", "Setting_Indicator", 9).equals("Y"))
+		{
+			driver.findElement(By.xpath(CookieWarningStatusXPath)).click();
+			System.out.println("Display EU-cookie Law Warning Status is:"+CookieWarningStatus+"as the Indicator indicates to Y");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 9).equals("N"))
+		{
+			driver.findElement(By.xpath(CookieWarningStatusXPath)).click();
+			driver.findElement(By.xpath(CookieWarningStatusXPath)).click();
+            System.out.println("Display EU-cookie Law Warning Status is:"+CookieWarningStatus+"as the Indicator indicates to N");
+		}
+		
+		/////////////////TAB2//////////////////////////////////////////////
+		 //////Tab------SEO Settings/////////////////
+		driver.findElement(By.xpath("//a[contains(@href, '#generalsettings-edit-2')]")).click();
+		/////////////////////Page title separator------SEO SETTINGS///////////////////////
+		if(d.getCellData("Custom", "Setting_Indicator", 10).equals("Y"))
+		{
+			String Name1=d.getCellData("Custom", "Required_Setting/Value",10);
+			String NameXPath1=d.getCellData("Custom", "ClickLink",10);
+			driver.findElement(By.xpath(NameXPath1)).clear();
+			driver.findElement(By.xpath(NameXPath1)).sendKeys(Name1);
+			System.out.println("The Page title separator is:"+""+Name1);
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 10).equals("N"))
+		{
+			String Name2=d.getCellData("Custom", "Required_Setting/Value",10);
+			String NameXPath2=d.getCellData("Custom", "ClickLink",10);
+			driver.findElement(By.xpath(NameXPath2)).clear();
+			driver.findElement(By.xpath(NameXPath2)).sendKeys(Name2);
+			System.out.println("The Page title separator is:"+""+Name2);
+		}
+		 ////////////////Page title SEO adjustment/////////////////////
+		if(d.getCellData("Custom", "Setting_Indicator", 11).equals("Y"))
+		{
+		String PageTitleName=d.getCellData("Custom", "Required_Setting/Value",11);
+		String PageTitleXPath2=d.getCellData("Custom", "ClickLink",11);
+		driver.findElement(By.xpath(PageTitleXPath2)).click();
+		driver.findElement(By.xpath("//div[3]/div/ul/li")).click();
+		System.out.println("The dropDown value selected is:"+" "+PageTitleName);
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 11).equals("N"))
+		{
+			String PageTitleName=d.getCellData("Custom", "Required_Setting/Value",11);
+			String PageTitleXPath2=d.getCellData("Custom", "ClickLink",11);
+			driver.findElement(By.xpath(PageTitleXPath2)).click();
+			driver.findElement(By.xpath("//div[3]/div/ul/li")).click();
+			System.out.println("The dropDown value selected is:"+" "+PageTitleName);
+		}
+        /////////////////////Default title//////////////////////////////////////////
+		if(d.getCellData("Custom", "Setting_Indicator", 12).equals("N"))
+		{
+		String DefaulttitleName=d.getCellData("Custom", "Required_Setting/Value",12);
+		String DefaulttitleXPath=d.getCellData("Custom", "ClickLink",12);
+		driver.findElement(By.xpath(DefaulttitleXPath)).clear();
+		driver.findElement(By.xpath(DefaulttitleXPath)).sendKeys(DefaulttitleName);
+		System.out.println("The Default title Edit Box is Empty");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 12).equals("Y"))
+		{
+			String DefaulttitleName=d.getCellData("Custom", "Required_Setting/Value",12);
+			String DefaulttitleXPath=d.getCellData("Custom", "ClickLink",12);
+			driver.findElement(By.xpath(DefaulttitleXPath)).clear();
+			driver.findElement(By.xpath(DefaulttitleXPath)).sendKeys(DefaulttitleName);
+			System.out.println("The Default title Edit Box is Empty");
+		}
+        /////////////Default Meta keywords//////
+		if(d.getCellData("Custom", "Setting_Indicator", 13).equals("N"))
+		{
+			String DefaultMetaKeywordsName=d.getCellData("Custom", "Required_Setting/Value",13);
+			String DefaultMetaKeywordsXPath=d.getCellData("Custom", "ClickLink",13);
+			driver.findElement(By.xpath(DefaultMetaKeywordsXPath)).clear();
+			driver.findElement(By.xpath(DefaultMetaKeywordsXPath)).sendKeys(DefaultMetaKeywordsName);
+			System.out.println("The Default Meta Keyword Edit Box is Empty");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 13).equals("Y"))
+		{
+			String DefaultMetaKeywordsName=d.getCellData("Custom", "Required_Setting/Value",13);
+			String DefaultMetaKeywordsXPath=d.getCellData("Custom", "ClickLink",13);
+			driver.findElement(By.xpath(DefaultMetaKeywordsXPath)).clear();
+			driver.findElement(By.xpath(DefaultMetaKeywordsXPath)).sendKeys(DefaultMetaKeywordsName);
+			System.out.println("The Default Meta Keyword Edit Box is Empty");
+		}
+		 //////////////Default Meta Description//////////////////
+		if(d.getCellData("Custom", "Setting_Indicator", 14).equals("N"))
+		{
+			String DefaultMetaDescriptionName=d.getCellData("Custom", "Required_Setting/Value",14);
+			String DefaultMetaDescriptionXPath=d.getCellData("Custom", "ClickLink",14);
+			driver.findElement(By.xpath(DefaultMetaDescriptionXPath)).clear();
+			driver.findElement(By.xpath(DefaultMetaDescriptionXPath)).sendKeys(DefaultMetaDescriptionName);
+			System.out.println("The Default Meta Keyword Edit Box is Empty");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 14).equals("Y"))
+		{
+			String DefaultMetaDescriptionName=d.getCellData("Custom", "Required_Setting/Value",14);
+			String DefaultMetaDescriptionXPath=d.getCellData("Custom", "ClickLink",14);
+			driver.findElement(By.xpath(DefaultMetaDescriptionXPath)).clear();
+			driver.findElement(By.xpath(DefaultMetaDescriptionXPath)).sendKeys(DefaultMetaDescriptionName);
+			System.out.println("The Default Meta Keyword Edit Box is Empty");
+		}
+        /////////////Convert non-western chars////////////// 
+		if(d.getCellData("Custom", "Setting_Indicator", 15).equals("N"))
+		{
+		String ConvertNonWesternCB=d.getCellData("Custom", "Required_Setting/Value",15);
+		String ConvertNonWesternXPath=d.getCellData("Custom", "ClickLink",15);
+		driver.findElement(By.xpath(ConvertNonWesternXPath)).click();
+		driver.findElement(By.xpath(ConvertNonWesternXPath)).click();
+		System.out.println("Convert non-western chars:"+" "+ConvertNonWesternCB+"as the indicator indicates to N");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 15).equals("Y"))
+		{
+			String ConvertNonWesternCB=d.getCellData("Custom", "Required_Setting/Value",15);
+			String ConvertNonWesternXPath=d.getCellData("Custom", "ClickLink",15);
+			driver.findElement(By.xpath(ConvertNonWesternXPath)).click();
+			System.out.println("Convert non-western chars:"+" "+ConvertNonWesternCB+"as the indicator indicates to N");
+		}
+       ///////////////////Enable canonical URL/////////////
+		if(d.getCellData("Custom", "Setting_Indicator", 16).equals("N"))
+		{
+	      String EnableCanonicalURLCB=d.getCellData("Custom", "Required_Setting/Value",16);
+	      String EnableCanonicalURLXPath=d.getCellData("Custom", "ClickLink",16);
+	      driver.findElement(By.xpath(EnableCanonicalURLXPath)).click();
+		  driver.findElement(By.xpath(EnableCanonicalURLXPath)).click();
+	      System.out.println("Enable Canonical URL:"+" "+EnableCanonicalURLCB+"as the indicator indicates to N");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 16).equals("Y"))
+		{
+		      String EnableCanonicalURLCB=d.getCellData("Custom", "Required_Setting/Value",16);
+		      String EnableCanonicalURLXPath=d.getCellData("Custom", "ClickLink",16);
+			  driver.findElement(By.xpath(EnableCanonicalURLXPath)).click();
+		      System.out.println("Enable Canonical URL:"+" "+EnableCanonicalURLCB+"as the indicator indicates to N");
+		}
+//////////////////Security Settings-------------Tab3////////////////
+		driver.findElement(By.xpath("//a[contains(@href, '#generalsettings-edit-3')]")).click();
+		
+		/////////////////Encryption private key/////////////////////////
+		if(d.getCellData("Custom", "Setting_Indicator", 17).equals("Y"))
+		{
+			String EncrytionPrivateKeyName=d.getCellData("Custom", "Required_Setting/Value",17);
+			String EncrytionPrivateKeyXPath=d.getCellData("Custom", "ClickLink",17);
+			driver.findElement(By.xpath(EncrytionPrivateKeyXPath)).clear();
+			driver.findElement(By.xpath(EncrytionPrivateKeyXPath)).sendKeys(EncrytionPrivateKeyName);
+			System.out.println("The Excrytion Key Name is:"+" "+EncrytionPrivateKeyName+"as the indicator indicates to Y");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 17).equals("N"))
+		{
+			String EncrytionPrivateKeyName=d.getCellData("Custom", "Required_Setting/Value",17);
+			String EncrytionPrivateKeyXPath=d.getCellData("Custom", "ClickLink",17);
+			driver.findElement(By.xpath(EncrytionPrivateKeyXPath)).clear();
+			driver.findElement(By.xpath(EncrytionPrivateKeyXPath)).sendKeys(EncrytionPrivateKeyName);
+			System.out.println("The Excrytion Key Name is:"+" "+EncrytionPrivateKeyName+"as the indicator indicates to N");
+		}
+		////////////////////AdminareaallowedIP///////////////////////////
+		if(d.getCellData("Custom", "Setting_Indicator", 18).equals("Y"))
+		{
+			String AdminareaallowedIPName=d.getCellData("Custom", "Required_Setting/Value",18);
+			String AdminareaallowedIPxpath=d.getCellData("Custom", "ClickLink",18);
+			driver.findElement(By.xpath(AdminareaallowedIPxpath)).clear();
+			driver.findElement(By.xpath(AdminareaallowedIPxpath)).sendKeys(AdminareaallowedIPName);
+			System.out.println("The Page title separator is:"+AdminareaallowedIPName+"as the indicator indicates to Y");	
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 18).equals("N"))
+		{
+			String AdminareaallowedIPName=d.getCellData("Custom", "Required_Setting/Value",18);
+			String AdminareaallowedIPxpath=d.getCellData("Custom", "ClickLink",18);
+			driver.findElement(By.xpath(AdminareaallowedIPxpath)).clear();
+			driver.findElement(By.xpath(AdminareaallowedIPxpath)).sendKeys(AdminareaallowedIPName);
+			System.out.println("The Page title separator is:"+AdminareaallowedIPName+"as the indicator indicates to N");	
+		}
+		//////////////////Hide admin menu items based on permissions//////////////////////
+		if(d.getCellData("Custom", "Setting_Indicator", 19).equals("Y"))
+		{
+			String HideadminmenuitemsbasedonpermissionsStatus=d.getCellData("Custom", "Required_Setting/Value",19);
+			String EnableCanonicalURLXPath=d.getCellData("Custom", "ClickLink",19);
+			driver.findElement(By.xpath(EnableCanonicalURLXPath)).click();
+			driver.findElement(By.xpath(EnableCanonicalURLXPath)).click();
+			System.out.println("Hide admin menu items based on permissions:"+" "+HideadminmenuitemsbasedonpermissionsStatus+"as the indiactor indicates to Y");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 19).equals("Y"))
+		{
+			String HideadminmenuitemsbasedonpermissionsStatus=d.getCellData("Custom", "Required_Setting/Value",19);
+			String EnableCanonicalURLXPath=d.getCellData("Custom", "ClickLink",19);
+			driver.findElement(By.xpath(EnableCanonicalURLXPath)).click();
+			driver.findElement(By.xpath(EnableCanonicalURLXPath)).click();
+			System.out.println("Hide admin menu items based on permissions:"+" "+HideadminmenuitemsbasedonpermissionsStatus+"as the indiactor indicates to N");
+		}
+        /////////////CaptchaEnabled//////////
+		if(d.getCellData("Custom", "Setting_Indicator", 20).equals("N"))
+		{
+		String CaptchaEnabledCheckBoxStatus=d.getCellData("Custom", "Required_Setting/Value",20);
+		String CaptchaEnabledxpath=d.getCellData("Custom", "ClickLink",20);
+		driver.findElement(By.xpath(CaptchaEnabledxpath)).click();
+		driver.findElement(By.xpath(CaptchaEnabledxpath)).click();
+		System.out.println("CaptchaEnabled checkbox status is:"+" "+CaptchaEnabledCheckBoxStatus+"as the indiactor indicates to N");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 20).equals("Y"))
+		{
+			String CaptchaEnabledCheckBoxStatus=d.getCellData("Custom", "Required_Setting/Value",20);
+			String CaptchaEnabledxpath=d.getCellData("Custom", "ClickLink",20);
+			driver.findElement(By.xpath(CaptchaEnabledxpath)).click();
+			System.out.println("CaptchaEnabled checkbox status is:"+" "+CaptchaEnabledCheckBoxStatus+"as the indiactor indicates to Y");
+		}
+		/////////////////SSL Settings////////////////////////
+		if(d.getCellData("Custom", "Setting_Indicator", 21).equals("N"))
+		{
+			String SSLSettingsCheckBoxStatus=d.getCellData("Custom", "Required_Setting/Value",21);
+			String SSLSettingsxpath=d.getCellData("Custom", "ClickLink",21);
+			driver.findElement(By.xpath(SSLSettingsxpath)).click();
+			driver.findElement(By.xpath(SSLSettingsxpath)).click();
+			System.out.println("The SSl Settings status is:"+" "+SSLSettingsCheckBoxStatus+"as the indiactor indicates to N");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 21).equals("Y"))
+		{
+			String SSLSettingsCheckBoxStatus=d.getCellData("Custom", "Required_Setting/Value",21);
+			String SSLSettingsxpath=d.getCellData("Custom", "ClickLink",21);
+			driver.findElement(By.xpath(SSLSettingsxpath)).click();
+			driver.findElement(By.xpath(SSLSettingsxpath)).click();
+			System.out.println("The SSl Settings status is:"+" "+SSLSettingsCheckBoxStatus+"as the indiactor indicates to Y");
+		}
+	///////Tab 4////////////////////
+		driver.findElement(By.xpath("//a[contains(@href, '#generalsettings-edit-4')]")).click();
+		////////////////////////ENABLED////////////////////////
+		if(d.getCellData("Custom", "Setting_Indicator", 22).equals("Y"))
+		{
+			String EnabledCheckBoxStatus=d.getCellData("Custom", "Required_Setting/Value",22);
+			String Enabledxpath=d.getCellData("Custom", "ClickLink",22);
+			driver.findElement(By.xpath(Enabledxpath)).click();
+			driver.findElement(By.xpath(Enabledxpath)).click();
+			System.out.println("The Enabled Check Box Status is:"+" "+EnabledCheckBoxStatus+"as the indicator indicates Y");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 22).equals("N"))
+		{
+			String EnabledCheckBoxStatus=d.getCellData("Custom", "Required_Setting/Value",22);
+			String Enabledxpath=d.getCellData("Custom", "ClickLink",22);
+			driver.findElement(By.xpath(Enabledxpath)).click();
+			System.out.println("The Enabled Check Box Status is:"+" "+EnabledCheckBoxStatus+"as the indicator indicates Y");
+		}
+		/////////////////////Use Letter page size//////////////////////////////////////////
+		if(d.getCellData("Custom", "Setting_Indicator", 23).equals("Y"))
+		{
+		String UseLetterPageSizeCheckBoxStatus=d.getCellData("Custom", "Required_Setting/Value",23);
+		String UseLetterPageSizexpath=d.getCellData("Custom", "ClickLink",23);
+		driver.findElement(By.xpath(UseLetterPageSizexpath)).click();
+		driver.findElement(By.xpath(UseLetterPageSizexpath)).click();
+		System.out.println("Use Page Letter Size:"+" "+UseLetterPageSizeCheckBoxStatus+"as the indicator indicates N");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 23).equals("N"))
+		{
+			String UseLetterPageSizeCheckBoxStatus=d.getCellData("Custom", "Required_Setting/Value",23);
+			String UseLetterPageSizexpath=d.getCellData("Custom", "ClickLink",23);
+			driver.findElement(By.xpath(UseLetterPageSizexpath)).click();
+			driver.findElement(By.xpath(UseLetterPageSizexpath)).click();
+			System.out.println("Use Page Letter Size:"+" "+UseLetterPageSizeCheckBoxStatus+"as the indicator indicates N");
+		}
+		////////////////TAB5/////////////////////////////////////////
+		
+		driver.findElement(By.xpath("//a[contains(@href, '#generalsettings-edit-5')]")).click();
+		Thread.sleep(2000);
+		//////////////Use images for language selection///////////////////////
+		if(d.getCellData("Custom", "Setting_Indicator", 24).equals("Y"))
+		{
+			String LanguageSelectionCheckBoxStatus=d.getCellData("Custom", "Required_Setting/Value",24);
+			String LanguageSelectionxpath=d.getCellData("Custom", "ClickLink",24);
+			driver.findElement(By.xpath(LanguageSelectionxpath)).click();
+			driver.findElement(By.xpath(LanguageSelectionxpath)).click();
+			System.out.println("The LanguageSelectionCheckBoxStatus is:"+" "+LanguageSelectionCheckBoxStatus);
+			
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 24).equals("N"))
+		{
+			String LanguageSelectionCheckBoxStatus=d.getCellData("Custom", "Required_Setting/Value",24);
+			String LanguageSelectionxpath=d.getCellData("Custom", "ClickLink",24);
+			driver.findElement(By.xpath(LanguageSelectionxpath)).click();	
+			System.out.println("The LanguageSelectionCheckBoxStatus is:"+" "+LanguageSelectionCheckBoxStatus);
+		}
+		///////////////SEO friendly URLs with multiple languages enabled////////////////////////
+		if(d.getCellData("Custom", "Setting_Indicator", 25).equals("N"))
+		{
+		
+		String SEOfriendlyURLCheckBoxStatus=d.getCellData("Custom", "Required_Setting/Value",25);
+		String SEOFriendlyURLxpath=d.getCellData("Custom", "ClickLink",25);
+		driver.findElement(By.xpath(SEOFriendlyURLxpath)).click();
+		driver.findElement(By.xpath(SEOFriendlyURLxpath)).click();
+		System.out.println("SEO friendly URLs with multiple languages enabled status is:"+" "+SEOfriendlyURLCheckBoxStatus+"as the indicator indicates Y");
+		}
+		else if(d.getCellData("Custom", "Setting_Indicator", 25).equals("Y"))
+		{
+			
+			String SEOfriendlyURLCheckBoxStatus=d.getCellData("Custom", "Required_Setting/Value",25);
+			String SEOFriendlyURLxpath=d.getCellData("Custom", "ClickLink",25);
+			driver.findElement(By.xpath(SEOFriendlyURLxpath)).click();
+			System.out.println("SEO friendly URLs with multiple languages enabled status is:"+" "+SEOfriendlyURLCheckBoxStatus+"as the indicator indicates Y");
+		}
+     //  driver.quit();
+		return "Pass";
+	
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+package testscript;
+
+import datatable.Xls_Reader;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+
+@Test
+public class BuyButtonSetting extends DriverScript{
+	
+	public static Xls_Reader e = new Xls_Reader("C:\\Users\\annavik.QUALITREEINC\\Desktop\\Frame_work_latest\\Module21_Selenium_Testng_Hybrid\\src\\testscript\\CategoryScripts.xlsx");
+	
+	@Test
+	 public static String BuybtnSetting() throws Exception
+	{
+		
+            driver.findElement(By.xpath("//a[contains(text(),'Administration')]")).click();
+			Thread.sleep(2000);
+		    driver.findElement(By.xpath("//ul[@id='Admin']/li[2]/span/span")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//html/body/div[1]/div/div[3]/ul/li[2]/div/ul/li[3]/span")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//a[contains(text(),'Manage products')]")).click();
+			Thread.sleep(2000);
+		    driver.findElement(By.xpath("//td[2]/input")).sendKeys(e.getCellData("Test_Data", "Parameters", 2));
+	        driver.findElement(By.xpath("//tr[5]/td/input")).click();
+		    if(driver.findElements(By.xpath("//a[contains(text(),'Edit')]")).size() != 0)
+				 
+			 {
+					driver.findElement(By.xpath("//a[contains(text(),'Edit')]")).click();
+					Thread.sleep(2000);
+					driver.findElement(By.xpath("//div[2]/span")).click();
+					Thread.sleep(2000);
+					driver.findElement(By.xpath("//div[2]/form/div/div/input")).click();	
+					
+			 }
+			 else
+				 
+			 {
+				 
+			System.out.println("No products available");
+			 }
+			
+		
+			driver.findElement(By.linkText("Add new")).click();
+		    Thread.sleep(2000);
+			driver.findElement(By.xpath("//div[@id='product-edit-1']/table/tbody/tr/td[2]/input")).sendKeys(e.getCellData("Test_Data", "Parameters", 2));
+		    driver.findElement(By.xpath("//div[3]/ul/li[3]/a")).click();
+			driver.findElement(By.xpath("//tr[7]/td[2]/div/input")).sendKeys(e.getCellData("Test_Data", "Parameters",3));
+		    Thread.sleep(2000);
+	        driver.findElement(By.xpath("//tr[10]/td[2]/div/input")).sendKeys(e.getCellData("Test_Data", "Parameters", 4));
+			Thread.sleep(2000);
+	        driver.findElement(By.xpath("//td[2]/div/div/input")).sendKeys(e.getCellData("Test_Data", "Parameters", 5));
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//tr[12]/td[2]/div/div/input")).sendKeys(e.getCellData("Test_Data", "Parameters", 6));
+			Thread.sleep(2000);
+			
+			if(e.getCellData("Methods", "Status", 3).equals("Yes"))
+				{
+					
+				if(e.getCellData("Methods", "Object Name", 3).equals("Disable Buybutton"))
+					{
+				         Thread.sleep(6000);
+						 driver.findElement(By.xpath("//div[@id='product-edit-3']/table/tbody/tr[13]/td[2]/input")).click();	
+					}
+				else
+					{
+						System.out.println("Buy button is enabled in Backend");
+				}}
+	
+		       driver.findElement(By.name("save")).click();
+		       driver.findElement(By.linkText("Public store")).click();
+		       return "Pass";
+		       }
+			}
+
+
